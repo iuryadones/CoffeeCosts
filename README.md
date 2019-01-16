@@ -1,4 +1,12 @@
 # CoffeeCosts
 Costs
 
-name: Iury Adones
+Iury Adones
+
+Fernando Campello
+
+Marcos Almeida
+
+Patrícia Lessa
+
+Guilherme S Cerqueira
