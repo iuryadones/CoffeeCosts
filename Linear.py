@@ -1,13 +1,17 @@
-# from scipy.optimize import linprog
-# c = [60, 40, 50]
-# A = [[20, 10, 10], [10, 10, 20]]
-# b = [350, 400]
-# res = linprog(c, A, b)
-# print(res)
-
 from scipy.optimize import linprog
-c = [-3, -5]
-A = [[1,0], [0,1],[3,2]]
-b = [4, 6, 18]
+import numpy as np
+
+c = np.array([-3, -5])
+A = np.array([[1,0], [0,1], [3,2]])
+b = np.array([4, 6, 18])
 res = linprog(c, A, b)
-print(res)
+# print(res)
+print('Optimal value:', res.fun, '\nX:', res.x)
+print(f'\n DUAL \n')
+
+bd = [-3, -5]
+Ad = -A.transpose()
+cd = [4, 6, 18]
+resd = linprog(cd, Ad, bd)
+# resd = print('Optimal value:', res.fun, '\nX:', res.x)
+print(f' Os multplicadores de lagrange são:{resd}')
