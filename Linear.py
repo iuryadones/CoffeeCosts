@@ -7,11 +7,10 @@ b = np.array([4, 6, 18])
 res = linprog(c, A, b)
 print('Optimal value:', res.fun, '\nX:', res.x)
 print(f'\n DUAL \n')
-Ad = -A.transpose()
 
-bd = [-3, -5]
+bd = c
 Ad = -A.transpose()
-cd = [4, 6, 18]
+cd = b
 resd = linprog(cd, Ad, bd)
 print(f' Os multplicadores de lagrange são:')
 print(resd)
