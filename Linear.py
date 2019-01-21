@@ -1,19 +1,20 @@
 from scipy.optimize import linprog
 import numpy as np
 
+#O padrão de entrada dos dados deve ser feita para um problema de maximização
+
 c = np.array([-3, -5])
 A = np.array([[1,0], [0,1], [3,2]])
 b = np.array([4, 6, 18])
 res = linprog(c, A, b)
-print('Optimal value:', res.fun, '\nX:', res.x)
+print(res)
 print(f'\n DUAL \n')
-
-bd = c
 Ad = -A.transpose()
-cd = b
-resd = linprog(cd, Ad, bd)
+resd = linprog(b, Ad, c)
 print(f' Os multplicadores de lagrange são:')
 print(resd)
+
+
 
 # ask = input ('The original problem is a maximization?: Y/N')
 # if ask == 'Y' or 'y':
