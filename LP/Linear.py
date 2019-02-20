@@ -45,9 +45,9 @@ import numpy as np
 # print(resd)
 
 
-c = np.array([-40, -60, -20])
-A = np.array([[80, 30, 10], [40, 100, 60], [20, 70, 90]])
-b = np.array([800, 1000, 600])
+c = np.array([-800, -1000, -600])
+A = np.array([[80, 40, 20], [30, 100, 70], [10, 60, 90]])
+b = np.array([400, 60, 20])
 res = linprog(c, A, b)
 print(res)
 print(f'\n DUAL \n')
